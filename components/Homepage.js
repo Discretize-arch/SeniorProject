@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         color: '#a3e0dc',
     },
     logo: {
-        width: 200,
-        height: 200,
+        width: 350,
+        height: 220,
         marginBottom: 20
     },
 });
