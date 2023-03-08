@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+//import { StatusBar } from 'expo-status-bar';
+//import { StyleSheet, Text, View } from 'react-native';
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -12,21 +12,57 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    //container for navigating screens
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Your Playlists'>
+      {/*Stack containing each screen*/}
+      <Stack.Navigator initialRouteName='Home'>
+
+        {/*homepage screen navigation*/}
         <Stack.Screen
           name="Home"
           component={Homepage}
+          options={{ 
+            title: 'Tremeloo',
+            headerStyle: {
+              backgroundColor: '#052224',
+            },
+            headerTintColor: '#a3e0dc',
+            headerTitleStyle: {
+              fontSize: 14,
+            }
+          }}
         />
+
+        {/*Your Playlists screen navigation*/}
         <Stack.Screen
           name="Your Playlists"
           component={YourPlaylists}
-          options={{title: 'Playlists'}}
-          
+          options={{ 
+            title: 'playlists',
+            headerStyle: {
+              backgroundColor: '#052224',
+            },
+            headerTintColor: '#a3e0dc',
+            headerTitleStyle: {
+              fontSize: 14,
+            }
+          }}
         />
+
+        {/*Song Recommendations screen navigation*/}
         <Stack.Screen
           name="Song Recommendations"
           component={SongRecs}
+          options={{ 
+            title: 'song recommendations',
+            headerStyle: {
+              backgroundColor: '#052224',
+            },
+            headerTintColor: '#a3e0dc',
+            headerTitleStyle: {
+              fontSize: 14,
+            }
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
