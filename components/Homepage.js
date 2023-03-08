@@ -1,13 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 // import { NativeBaseProvider, Button } from "native-base";
 
-const Homepage = (navigation) => {
+const Homepage = ({ navigation }) => {
 
     return (
         // add my logo to the top of the page around here
         <View style={styles.container}>
-
+            <StatusBar barStyle="light-content" backgroundColor="#052224" />
             <View style={styles.logoContainer}>
                 <Image source={require('../assets/logo.png')} style={styles.logo} />
             </View>
@@ -20,7 +23,8 @@ const Homepage = (navigation) => {
             <View style={styles.textContainer}>
                 <Button
                     title="Login to Spotify"
-                    onPress={() => alert('button pressed')}
+                    onPress={() => navigation.navigate('Your Playlists')}
+                    backgroundColor = '#a3e0dc'
                 />
                 <Text style={styles.text}> Connect to your Spotify button</Text>
             </View>
@@ -55,6 +59,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#a3e0dc',
         textAlign: 'center',
+        fontSize: 18, 
     },
 
     buttonContainer: {
