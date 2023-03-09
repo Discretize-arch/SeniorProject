@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Homepage from './components/Homepage.js';
 import YourPlaylists from './components/YourPlaylists.js';
 import SongRecs from './components/SongRecs.js';
+import LogoHeader from './components/LogoHeader.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +30,7 @@ export default function App() {
             headerTintColor: '#a3e0dc',
             headerTitleStyle: {
               fontSize: 14,
-            }
+            },
           }}
         />
 
@@ -45,7 +46,8 @@ export default function App() {
             headerTintColor: '#a3e0dc',
             headerTitleStyle: {
               fontSize: 14,
-            }
+            },
+            headerTitle: (props) => <LogoHeader {...props} />
           }}
         />
 
@@ -61,7 +63,8 @@ export default function App() {
             headerTintColor: '#a3e0dc',
             headerTitleStyle: {
               fontSize: 14,
-            }
+            },
+            headerTitle: (props) => <LogoHeader {...props} />
           }}
         />
       </Stack.Navigator>
