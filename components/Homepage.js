@@ -16,8 +16,7 @@ const Homepage = ({ navigation }) => {
             </View>
 
             <View style={styles.textContainer}>
-                <Text style={styles.text}>Tremeloo</Text>
-                <Text style={styles.text}>Connecting you to the music you want to listen to</Text>
+                <Text style={styles.text}>Connecting you to the music you want</Text>
             </View>
 
             <View style={styles.textContainer}>
@@ -26,7 +25,6 @@ const Homepage = ({ navigation }) => {
                     onPress={() => navigation.navigate('Your Playlists')}
                     backgroundColor = '#a3e0dc'
                 />
-                <Text style={styles.text}> Connect to your Spotify button</Text>
             </View>
 
         </View>
