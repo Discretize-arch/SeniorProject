@@ -2,35 +2,67 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
 
+import user from './user.json';
+let text = user;
+const userData = (user)
+
+
 const YourPlaylists = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
 
             <View style={styles.bannerContainer}>
-                <Image source={require('../assets/banner.png')} style={styles.banner} />
+                <Image
+                    source={require('../assets/banner.png')}
+                    style={styles.banner}
+                />
             </View>
 
             <View style={styles.playlistHeader}>
-                <Text style={styles.headerText}>Your Playlists</Text>
+
+                <Text
+                    style={styles.headerText}>
+                    {userData.name}'s Playlists
+                </Text>
             </View>
 
             <View style={styles.playlistContainer}>
-                <ScrollView style={styles.scrollView}>     
-                    <View style={styles.playlistElement}>
-                        <Text style={styles.playlistImage}>
-                            playlist image
-                        </Text>
+                <ScrollView style={styles.scrollView}>
+                    {<View style={styles.playlistElement}>
+
+                        <Image 
+                            source={{uri: "https://i.scdn.co/image/ab67706c0000bebbb962eef678e0ac47a0aaf1ab"}}
+                            style={styles.playlistImage}
+                        />
 
                         <Button style={styles.playlistButton}
-                            title='playlist Name'
+                            title={userData.library[0].name}
                             onPress={() => navigation.navigate('Song Recommendations')}
                         />
-                    </View>
+                    </View>}
                 </ScrollView>
             </View>
         </View>
     );
+}
+
+
+function makeList() {
+    let x = 0;
+    while (x < userData.library.length) {
+        <View style={styles.playlistElement}>
+            
+            <View style={styles.pImageContainer}>
+                <img source={{uri: userData.library[x].image}} style={styles.playlistImage} />
+            </View>
+
+            <Button style={styles.playlistButton}
+                title={userData.library.name}
+                onPress={() => navigation.navigate('Song Recommendations')}
+            />
+        </View>
+    }
 }
 
 const styles = StyleSheet.create({
@@ -67,13 +99,24 @@ const styles = StyleSheet.create({
     },
 
     playlistElement: {
+        flex: 1,
         flexDirection: 'row',
+        padding: 5, 
     },
-    playlistImage: {
-        flex: 1 / 2,
-        color: '#fff',
+
+    pImageContainer: {
+        flex: 1/8,
         justifyContent: 'center',
+        alignItems: 'center',
         textAlignVertical: 'center',
+        alignContent: 'center',
+    },
+
+    playlistImage: {
+        width: 30,
+        height: 30,
+        marginRight: 20,
+        marginTop: 3,
     },
 
     playlistButton: {

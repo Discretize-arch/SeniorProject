@@ -1,0 +1,357 @@
+{
+    "name": "Khemrind",
+    "image": "https://i.scdn.co/image/ab6775700000ee858c34ef87b159004fda081d6e",
+    "library": [
+        {
+            "name": "un playlist pa mi amor",
+            "description": "not an e girl, just a friend",
+            "image": "https://i.scdn.co/image/ab67706c0000bebbb962eef678e0ac47a0aaf1ab",
+            "songs": [
+                {
+                    "name": "Año Nuevo",
+                    "popularity": 35,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/10a2c4c0aa2d3356b4640186c90c14083e4ee099?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 1,
+                    "duration": 235287,
+                    "added": "2023-01-27T17:18:20Z",
+                    "id": "1nZPqefxCHB9xH0fTSIBYd",
+                    "album": {
+                        "name": "Año Nuevo",
+                        "image": "https://i.scdn.co/image/ab67616d0000b2737392ba1304309dafa289a1fb",
+                        "label": "El Zar",
+                        "release": "2019-06-14",
+                        "popularity": 30,
+                        "_tracks": "https://api.spotify.com/v1/albums/0QL499eSoFhBo3JRfEqVzT/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "El Zar",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eb200240192d00faefdce0ae73",
+                            "genres": [
+                                "argentine alternative rock",
+                                "argentine indie"
+                            ],
+                            "followers": 42344,
+                            "popularity": 56,
+                            "id": "1cj1ov4uZ0Htsx9PWDpNvi"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ayayai",
+                    "popularity": 35,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/19c6f55a386670c642b2ab256be2a0a41aeb1ddc?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 1,
+                    "duration": 170013,
+                    "added": "2023-01-27T05:09:47Z",
+                    "id": "5mNqz2m3qWWKKiQcvYrKP2",
+                    "album": {
+                        "name": "Ayayai",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273886174b1aa2e8426851c53b9",
+                        "label": "Crooked Lid Records",
+                        "release": "2019-09-18",
+                        "popularity": 30,
+                        "_tracks": "https://api.spotify.com/v1/albums/67IhJtRigeH1BHBu2WXLKX/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Daniela Andrade",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eb0463f3fb5310a2647a22317b",
+                            "genres": [
+                                "canadian contemporary r&b",
+                                "folk-pop"
+                            ],
+                            "followers": 389261,
+                            "popularity": 57,
+                            "id": "0WfaItAbs4vlgIA1cuqGtJ"
+                        }
+                    ]
+                },
+                {
+                    "name": "vaya con dios",
+                    "popularity": 53,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/584d2f77cae1e0960ce3251f964e92a82c8c80dc?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 4,
+                    "duration": 175539,
+                    "added": "2023-01-27T04:45:09Z",
+                    "id": "5OJkXdRgQPGrbl6aGnGH1G",
+                    "album": {
+                        "name": "Sin Miedo (del Amor y Otros Demonios) ∞",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273044a5466dac00f7b3c570b99",
+                        "label": "EMI / Interscope",
+                        "release": "2020-12-04",
+                        "popularity": 77,
+                        "_tracks": "https://api.spotify.com/v1/albums/00wSTrFxoSzA7eeS1UxHgd/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Kali Uchis",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eb4ddb58b186bace4ed7e9f26e",
+                            "genres": [
+                                "colombian pop",
+                                "pop"
+                            ],
+                            "followers": 3606256,
+                            "popularity": 83,
+                            "id": "1U1el3k54VvEUzo3ybLPlM"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ruthless",
+                    "popularity": 56,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/ed784a65a47e1e4d61a46691bff9453ad9aab0d1?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 1,
+                    "duration": 247455,
+                    "added": "2023-01-28T02:53:55Z",
+                    "id": "1mbuSss0OVqfS00y7yCNCZ",
+                    "album": {
+                        "name": "Superclean, Vol. II",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273a64b06c0eb30ce15c3e6edc1",
+                        "label": "Superclean Records",
+                        "release": "2018-09-28",
+                        "popularity": 65,
+                        "_tracks": "https://api.spotify.com/v1/albums/1Iu5sceGmML4CeQ2f5Q6aO/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "The Marías",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eba37a2e21b6b2d1aa22826548",
+                            "genres": [
+                                "bedroom pop",
+                                "indie pop",
+                                "la indie"
+                            ],
+                            "followers": 930738,
+                            "popularity": 73,
+                            "id": "2sSGPbdZJkaSE2AbcGOACx"
+                        }
+                    ]
+                },
+                {
+                    "name": "My Love",
+                    "popularity": 51,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/b44d1a94015f81f34b5978a16be743bc45e3cd0d?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 1,
+                    "duration": 239295,
+                    "added": "2023-01-28T03:00:19Z",
+                    "id": "4mDAxQGyDdpju78hGsACwn",
+                    "album": {
+                        "name": "My Love",
+                        "image": "https://i.scdn.co/image/ab67616d0000b27376bde875e14724b336cf91a9",
+                        "label": "EO Entertainment & Pink Poetry",
+                        "release": "2019-03-15",
+                        "popularity": 46,
+                        "_tracks": "https://api.spotify.com/v1/albums/057cY2PiXWen7J3Msiv7YE/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "maye",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eb4cc18e11ba2bdc6e79f4d344",
+                            "genres": [
+                                "latinx alternative"
+                            ],
+                            "followers": 146478,
+                            "popularity": 57,
+                            "id": "5ti5FPHgtaSf15KcUisZMt"
+                        }
+                    ]
+                },
+                {
+                    "name": "Soledad y el Mar (feat. Los Macorinos)",
+                    "popularity": 64,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/69a0f8596cd8f3525a3dec0b7b76b2b169e0725f?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 2,
+                    "duration": 214546,
+                    "added": "2023-02-05T01:30:49Z",
+                    "id": "1Xtz05nIgJiEYdncfd1w8h",
+                    "album": {
+                        "name": "Musas (Un Homenaje al Folclore Latinoamericano en Manos de Los Macorinos, Vol. 1)",
+                        "image": "https://i.scdn.co/image/ab67616d0000b27311f5f38824cdfb0a69c7fa07",
+                        "label": "Columbia",
+                        "release": "2017-05-05",
+                        "popularity": 65,
+                        "_tracks": "https://api.spotify.com/v1/albums/30isRfL4u7fowKgTVsydDt/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Natalia Lafourcade",
+                            "image": "https://i.scdn.co/image/ab6761610000e5ebc3c42a12891de47e2a39a95a",
+                            "genres": [
+                                "latin alternative",
+                                "mexican pop",
+                                "rock en espanol",
+                                "veracruz indie"
+                            ],
+                            "followers": 3781187,
+                            "popularity": 76,
+                            "id": "1hcdI2N1023RvSwLzTtdsp"
+                        },
+                        {
+                            "name": "Los Macorinos",
+                            "image": "https://i.scdn.co/image/ab6761610000e5ebdab7fc9b7b0ec7c4c936a8c4",
+                            "genres": [],
+                            "followers": 10899,
+                            "popularity": 60,
+                            "id": "1ldFRYgmjxDrX27bIe3dWx"
+                        }
+                    ]
+                },
+                {
+                    "name": "After The Storm (feat. Tyler, The Creator & Bootsy Collins)",
+                    "popularity": 75,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/9b038bf9951d64a3cd9490b919d33ba6a1375ef1?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 13,
+                    "duration": 207454,
+                    "added": "2023-02-05T01:43:34Z",
+                    "id": "1otG6j1WHNvl9WgXLWkHTo",
+                    "album": {
+                        "name": "Isolation",
+                        "image": "https://i.scdn.co/image/ab67616d0000b27390b4e1905b1fc48c537ec053",
+                        "label": "EMI",
+                        "release": "2018-04-06",
+                        "popularity": 78,
+                        "_tracks": "https://api.spotify.com/v1/albums/4EPQtdq6vvwxuYeQTrwDVY/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Kali Uchis",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eb4ddb58b186bace4ed7e9f26e",
+                            "genres": [
+                                "colombian pop",
+                                "pop"
+                            ],
+                            "followers": 3606256,
+                            "popularity": 83,
+                            "id": "1U1el3k54VvEUzo3ybLPlM"
+                        },
+                        {
+                            "name": "Tyler, The Creator",
+                            "image": "https://i.scdn.co/image/ab6761610000e5eb8278b782cbb5a3963db88ada",
+                            "genres": [
+                                "hip hop",
+                                "rap"
+                            ],
+                            "followers": 10527125,
+                            "popularity": 87,
+                            "id": "4V8LLVI7PbaPR0K2TGSxFF"
+                        },
+                        {
+                            "name": "Bootsy Collins",
+                            "image": "https://i.scdn.co/image/2103311f1aedbaa1c8c9514d79c45f4c3ddbca96",
+                            "genres": [
+                                "funk",
+                                "p funk",
+                                "soul"
+                            ],
+                            "followers": 355694,
+                            "popularity": 70,
+                            "id": "5K0rbdBrs2tNXe5LeWMATT"
+                        }
+                    ]
+                },
+                {
+                    "name": "Lo Volvería",
+                    "popularity": 34,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/41d709117f4050c727f8b0bb6df0b9789cbcb8e2?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 1,
+                    "duration": 228019,
+                    "added": "2023-02-05T02:04:28Z",
+                    "id": "2IOSyg0w81fJnQbpmoseRf",
+                    "album": {
+                        "name": "Lo Volvería",
+                        "image": "https://i.scdn.co/image/ab67616d0000b2737510741e921d2acd79d8ccba",
+                        "label": "WM Mexico",
+                        "release": "2020-11-05",
+                        "popularity": 30,
+                        "_tracks": "https://api.spotify.com/v1/albums/0hOgrkaHadHhWSUi7NoipS/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Juan Pablo Vega",
+                            "image": "https://i.scdn.co/image/ab6761610000e5ebd8edaf51a4084711c93975a2",
+                            "genres": [
+                                "colombian indie",
+                                "latin rock",
+                                "mexican indie",
+                                "reggae en espanol"
+                            ],
+                            "followers": 131061,
+                            "popularity": 50,
+                            "id": "2PfyKA4qhjkxUVkerTCxz0"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ne Me Quitte Pas (Don't Leave Me)",
+                    "popularity": 57,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/3dde145b55f63abb64c48d171a1d441d4f2549c9?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 3,
+                    "duration": 168746,
+                    "added": "2023-02-05T02:06:56Z",
+                    "id": "7DYkWTA0ckaqm2MFfAIlQr",
+                    "album": {
+                        "name": "Hold Space For Me",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273600c6207f4192b69a3df5bd3",
+                        "label": "Mom+Pop",
+                        "release": "2020-03-27",
+                        "popularity": 54,
+                        "_tracks": "https://api.spotify.com/v1/albums/4Y9r8QQYroasHOYHUwCeSB/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Orion Sun",
+                            "image": "https://i.scdn.co/image/ab6761610000e5ebb4c956981d00ad66e06792fa",
+                            "genres": [
+                                "alternative r&b",
+                                "bedroom pop",
+                                "chill r&b",
+                                "indie r&b",
+                                "indie soul"
+                            ],
+                            "followers": 180154,
+                            "popularity": 65,
+                            "id": "2efrqekWSHlvhATD50AG3m"
+                        }
+                    ]
+                },
+                {
+                    "name": "Champagne Galore",
+                    "popularity": 14,
+                    "previewUrl": "https://p.scdn.co/mp3-preview/b1bfefbc1c2708503115468380c697af96ea4590?cid=ecee50ecceb74aefba8e87075a2324ae",
+                    "trackNumber": 7,
+                    "duration": 165903,
+                    "added": "2023-02-05T02:14:44Z",
+                    "id": "4m86x5hD8IHUYsuxiUPbsz",
+                    "album": {
+                        "name": "Adojio",
+                        "image": "https://i.scdn.co/image/ab67616d0000b273b57ac8f36a964993214c5581",
+                        "label": "Onetime! / EMPIRE",
+                        "release": "2019-02-01",
+                        "popularity": 38,
+                        "_tracks": "https://api.spotify.com/v1/albums/3dfTeRPEPCLiBlzEQBMPAK/tracks?offset=0&limit=50&locale=*"
+                    },
+                    "artists": [
+                        {
+                            "name": "Elujay",
+                            "image": "https://i.scdn.co/image/ab6761610000e5ebad4154f1744eb1d109646aa3",
+                            "genres": [
+                                "alternative r&b",
+                                "cali rap",
+                                "chill r&b",
+                                "indie hip hop",
+                                "indie r&b",
+                                "indie soul",
+                                "underground hip hop",
+                                "viral rap"
+                            ],
+                            "followers": 80904,
+                            "popularity": 53,
+                            "id": "1CgbNAF3Stnz1Tpipu3xdO"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
