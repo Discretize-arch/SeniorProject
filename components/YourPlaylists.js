@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
 
 const YourPlaylists = ({ navigation }) => {
 
@@ -15,22 +16,19 @@ const YourPlaylists = ({ navigation }) => {
             </View>
 
             <View style={styles.playlistContainer}>
-                <Text style={styles.text}>Playlists go here</Text>
-                
-                <View style={styles.playlistElement}>
-                    <Text style ={styles.playlistImage}>
-                        playlist image
-                    </Text>
+                <ScrollView style={styles.scrollView}>     
+                    <View style={styles.playlistElement}>
+                        <Text style={styles.playlistImage}>
+                            playlist image
+                        </Text>
 
-                    <Button style = {styles.playlistButton}
-                        title='playlist Name'
-                        onPress={() => navigation.navigate('Song Recommendations')}
-                    />
-
-                </View>
-
+                        <Button style={styles.playlistButton}
+                            title='playlist Name'
+                            onPress={() => navigation.navigate('Song Recommendations')}
+                        />
+                    </View>
+                </ScrollView>
             </View>
-
         </View>
     );
 }
@@ -55,7 +53,6 @@ const styles = StyleSheet.create({
 
     playlistHeader: {
         flex: 1 / 8,
-        justifyContent: 'flex-start',
     },
     headerText: {
         color: '#a3e0dc',
@@ -65,7 +62,6 @@ const styles = StyleSheet.create({
     playlistContainer: {
         flex: 1,
         width: '100%',
-        //borderRadius: 20,
         borderTopWidth: 1,
         borderColor: '#a3e0dc',
     },
@@ -73,15 +69,19 @@ const styles = StyleSheet.create({
     playlistElement: {
         flexDirection: 'row',
     },
-    playlistImage:{
-        flex:1/2,
-        color:'#fff',
+    playlistImage: {
+        flex: 1 / 2,
+        color: '#fff',
         justifyContent: 'center',
         textAlignVertical: 'center',
     },
 
-    playlistButton:{
-        flex:1,
+    playlistButton: {
+        flex: 1,
+    },
+    scrollView: {
+        flex: 1,
+        backgroundColor: '#212f30',
     }
 });
 
