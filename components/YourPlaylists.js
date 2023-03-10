@@ -79,17 +79,13 @@ const styles = StyleSheet.create({
     playlistElement: {
         flex: 1,
         flexDirection: 'row',
-        padding: 5,
-        alignItems: 'stretch'
+        margin: 5,
     },
-
-
 
     playlistImage: {
         width: 35,
         height: 35,
         marginRight: 20,
-        marginTop: 3,
         borderRadius: 5,
     },
 

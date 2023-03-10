@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
+import Recommendation from './recommendation.json';
 
 const SongRecs = ({ navigation }) => {
 
@@ -15,23 +16,23 @@ const SongRecs = ({ navigation }) => {
             </View>
 
             <View style={styles.songContainer}>
-                <Text style={styles.text}>Song list goes here</Text>
-                
-                <ScrollView style={styles.ScrollView}>
-                    <View style={styles.playlistElements}>
-                        <Text style={styles.playlistImage}>
-                            artist image
-                        </Text>
+                <ScrollView style={styles.scrollView}>
+                    {Recommendation.tracks.map((song, i) => (<View style={styles.songElements}>
+                        {/*issue with getting 1 of 3 given album covers*/}
+                        {/*<Image
+                            style={styles.albumCover}
+                            source={{uri: song.images.url}}
+                         />*/}
 
                         <Text style={styles.songName}>
-                            Song Name Here
+                            {song.name}
                         </Text>
 
                         <Button style={styles.songButton}
                             title='Add to Playlist'
                             onPress={() => navigation.navigate('Song Recommendations')}
                         />
-                    </View>
+                    </View>))}
                 </ScrollView>
             </View>
         </View>
@@ -72,8 +73,13 @@ const styles = StyleSheet.create({
         borderColor: '#a3e0dc',
     },
 
-    playlistElements: {
+    scrollView:{
+        backgroundColor: '#212f30',
+    },
+
+    songElements: {
         flexDirection: 'row',
+        margin: 5,
     },
     playlistImage: {
         flex: 1 / 2,
@@ -83,13 +89,12 @@ const styles = StyleSheet.create({
     },
 
     playlistButton: {
-        flex: 1,
+        flex: 1/2,
     },
     songName: {
-        flex: 1 / 2,
+        flex: 1,
         textAlignVertical: 'center',
         color: '#fff',
-
     }
 });
 
