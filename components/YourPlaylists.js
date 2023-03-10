@@ -1,11 +1,7 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
-
-import user from './user.json';
-let text = user;
-const userData = (user)
-
+import User from './user.json';
 
 const YourPlaylists = ({ navigation }) => {
 
@@ -23,46 +19,28 @@ const YourPlaylists = ({ navigation }) => {
 
                 <Text
                     style={styles.headerText}>
-                    {userData.name}'s Playlists
+                    {User.name}'s Playlists
                 </Text>
             </View>
 
             <View style={styles.playlistContainer}>
                 <ScrollView style={styles.scrollView}>
-                    {<View style={styles.playlistElement}>
+                    {User.library.map((playlist) => (<View style={styles.playlistElement}>
 
                         <Image 
-                            source={{uri: "https://i.scdn.co/image/ab67706c0000bebbb962eef678e0ac47a0aaf1ab"}}
+                            source={{uri: playlist.image}}
                             style={styles.playlistImage}
                         />
 
                         <Button style={styles.playlistButton}
-                            title={userData.library[0].name}
+                            title={playlist.name}
                             onPress={() => navigation.navigate('Song Recommendations')}
                         />
-                    </View>}
+                    </View>))}
                 </ScrollView>
             </View>
         </View>
     );
-}
-
-
-function makeList() {
-    let x = 0;
-    while (x < userData.library.length) {
-        <View style={styles.playlistElement}>
-            
-            <View style={styles.pImageContainer}>
-                <img source={{uri: userData.library[x].image}} style={styles.playlistImage} />
-            </View>
-
-            <Button style={styles.playlistButton}
-                title={userData.library.name}
-                onPress={() => navigation.navigate('Song Recommendations')}
-            />
-        </View>
-    }
 }
 
 const styles = StyleSheet.create({
@@ -101,26 +79,22 @@ const styles = StyleSheet.create({
     playlistElement: {
         flex: 1,
         flexDirection: 'row',
-        padding: 5, 
+        padding: 5,
+        alignItems: 'stretch'
     },
 
-    pImageContainer: {
-        flex: 1/8,
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlignVertical: 'center',
-        alignContent: 'center',
-    },
+
 
     playlistImage: {
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
         marginRight: 20,
         marginTop: 3,
+        borderRadius: 5,
     },
 
     playlistButton: {
-        flex: 1,
+        flex:1,
     },
     scrollView: {
         flex: 1,
