@@ -4,9 +4,8 @@ import ConstructBackEnd from './Spotify';
 
 
 const Homepage = ({ navigation }) => {
-    
+    const spotify = ConstructBackEnd()
     return (
-        // add my logo to the top of the page around here
         <View style={styles.container}>
             <StatusBar barStyle="light-content" backgroundColor="#052224" />
             <View style={styles.logoContainer}>
@@ -20,13 +19,22 @@ const Homepage = ({ navigation }) => {
             <View style={styles.textContainer}>
                 <Button
                     title="Login to Spotify"
-                    onPress={() => navigation.navigate('Your Playlists')}
+                    onPress={() => spotify.Authenticate()}
                     backgroundColor = '#a3e0dc'
                 />
+                {Authenticated(spotify, navigation)}
             </View>
-
         </View>
     );
+}
+
+function Authenticated (spotify, navigation) {
+    if (spotify.IsAuthenticated) {
+        return (
+        navigation.navigate('Your Playlists')
+        )
+    }
+    
 }
 
 const styles = StyleSheet.create({
