@@ -4,9 +4,9 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Homepage from './components/Homepage.js';
-import YourPlaylists from './components/YourPlaylists.js';
-import SongRecs from './components/SongRecs.js';
+import Homepage from './components/pages/Homepage.js';
+import YourPlaylists from './components/pages/YourPlaylists.js';
+import SongRecs from './components/pages/SongRecs.js';
 import LogoHeader from './components/LogoHeader.js';
 
 const Stack = createNativeStackNavigator();

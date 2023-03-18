@@ -1,16 +1,17 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
-import User from './user.json';
+import User from '../user.json';
+import ConstructBackend from '../Spotify';
 
 const YourPlaylists = ({ navigation }) => {
-
+    const playlists = ConstructBackend().Playlists;
     return (
         <View style={styles.container}>
 
             <View style={styles.bannerContainer}>
                 <Image
-                    source={require('../assets/banner.png')}
+                    source={require('../../assets/banner.png')}
                     style={styles.banner}
                 />
             </View>
@@ -19,21 +20,21 @@ const YourPlaylists = ({ navigation }) => {
 
                 <Text
                     style={styles.headerText}>
-                    {User.name}'s Playlists
+                    { }'s Playlists
                 </Text>
             </View>
 
             <View style={styles.playlistContainer}>
                 <ScrollView style={styles.scrollView}>
-                    {User.library.map((playlist) => (<View style={styles.playlistElement}>
+                    {playlists.map((playlist, key) => (<View style={styles.playlistElement}>
 
-                        <Image 
-                            source={{uri: playlist.image}}
+                        <Image
+                            source={{ uri: playlist.playlist.images.map((image) => (image.url)) }}
                             style={styles.playlistImage}
                         />
 
                         <Button style={styles.playlistButton}
-                            title={playlist.name}
+                            title={playlist.playlist.name}
                             onPress={() => navigation.navigate('Song Recommendations')}
                         />
                     </View>))}
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     },
 
     playlistButton: {
-        flex:1,
+        flex: 1,
     },
     scrollView: {
         flex: 1,

@@ -1,15 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, StatusBar } from 'react-native';
-import ConstructBackEnd from './Spotify';
+import ConstructBackEnd from '../Spotify';
 
-
+/**home screen displayed before authentification */
 const Homepage = ({ navigation }) => {
     const spotify = ConstructBackEnd()
+    if (spotify.IsAuthenticated){
+        navigation.navigate('Your Playlists')
+    }
     return (
         <View style={styles.container}>
             <StatusBar barStyle="light-content" backgroundColor="#052224" />
             <View style={styles.logoContainer}>
-                <Image source={require('../assets/logo.png')} style={styles.logo} />
+                <Image source={require('../../assets/logo.png')} style={styles.logo} />
             </View>
 
             <View style={styles.textContainer}>
@@ -27,7 +30,7 @@ const Homepage = ({ navigation }) => {
         </View>
     );
 }
-
+/**checks authentification and moves the next screen if true */
 function Authenticated (spotify, navigation) {
     if (spotify.IsAuthenticated) {
         return (

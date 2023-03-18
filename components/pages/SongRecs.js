@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
-import Recommendation from './recommendation.json';
-
+import Recommendation from '../recommendation.json';
+import ConstructBackend from '../Spotify';
 const SongRecs = ({ navigation }) => {
-
+    const {Playlists, RefreshRecommendations, Selection} = ConstructBackend();
     return (
         <View style={styles.container}>
 
             <View style={styles.bannerContainer}>
-                <Image source={require('../assets/banner.png')} style={styles.banner} />
+                <Image source={require('../../assets/banner.png')} style={styles.banner} />
             </View>
 
             <View style={styles.playlistHeader}>
