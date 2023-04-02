@@ -43,6 +43,7 @@ export default function ConstructBackend() {
   React.useEffect(() => {
     if (response?.type === 'success') {
       setCode(response.params["code"])
+      console.log("success")
     }
   }, [response])
 
@@ -142,7 +143,9 @@ export default function ConstructBackend() {
                 tracks: tracksResponse.items,
                 recommendations: [],
               })
-
+              
+              // print updated list in console
+              console.log(updatedList)
               setPlaylists(updatedList)
 
               // log error
