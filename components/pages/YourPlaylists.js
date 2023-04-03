@@ -1,11 +1,17 @@
+import React from 'react'
+import LogoHeader from '../LogoHeader'
+import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native'
+import { Context } from "../Spotify"
 
-import React from 'react';
-import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
-import User from '../user.json';
-import ConstructBackend from '../Spotify';
+export const YourPlaylists = ({ navigation }) => {
 
-const YourPlaylists = ({ navigation }) => {
-    const playlists = ConstructBackend().Playlists;
+    const spotify = React.useContext(Context)
+
+    const playlistItemClick = (index) => {
+        spotify.RefreshRecommendations(index)
+        navigation.navigate('Song Recommendations', index)
+    }
+
     return (
         <View style={styles.container}>
 
@@ -17,31 +23,26 @@ const YourPlaylists = ({ navigation }) => {
             </View>
 
             <View style={styles.playlistHeader}>
-
-                <Text
-                    style={styles.headerText}>
-                    { }'s Playlists
-                </Text>
+                <Text style={styles.headerText}>Playlists</Text>
             </View>
 
             <View style={styles.playlistContainer}>
                 <ScrollView style={styles.scrollView}>
-                    {playlists.map((playlist, key) => (<View style={styles.playlistElement}>
-
+                    {spotify.Playlists.map((playlist, index) => (
+                    <View key={playlist.playlist.id} style={styles.playlistElement}>
                         <Image
-                            source={{ uri: playlist.playlist.images.map((image) => (image.url)) }}
+                            source={{ uri: playlist.playlist.images[0].url }}
                             style={styles.playlistImage}
                         />
-
                         <Button style={styles.playlistButton}
                             title={playlist.playlist.name}
-                            onPress={() => navigation.navigate('Song Recommendations')}
+                            onPress={() => playlistItemClick(index)}
                         />
                     </View>))}
                 </ScrollView>
             </View>
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -97,6 +98,16 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#212f30',
     }
-});
+})
 
-export default YourPlaylists;
+export const YourPlaylistsOptions = { 
+    title: 'playlists',
+    headerStyle: {
+      backgroundColor: '#052224',
+    },
+    headerTintColor: '#a3e0dc',
+    headerTitleStyle: {
+      fontSize: 14,
+    },
+    headerTitle: (props) => <LogoHeader {...props} />
+}

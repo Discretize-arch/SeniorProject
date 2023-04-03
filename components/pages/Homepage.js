@@ -1,13 +1,19 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, Button, StatusBar } from 'react-native';
-import ConstructBackEnd from '../Spotify';
+import React from 'react'
+import { StyleSheet, Text, View, Image, Button, StatusBar } from 'react-native'
+import { Context } from "../Spotify"
 
 /**home screen displayed before authentification */
-const Homepage = ({ navigation }) => {
-    const spotify = ConstructBackEnd()
-    if (spotify.IsAuthenticated){
-        navigation.navigate('Your Playlists')
-    }
+export const Homepage = ({ navigation }) => {
+
+    const spotify = React.useContext(Context)
+
+    // check authentification and move the next screen
+    React.useEffect(() => {
+        if (spotify.IsAuthenticated) {
+            navigation.navigate('Your Playlists')
+        }
+    }, [spotify.IsAuthenticated])
+
     return (
         <View style={styles.container}>
             <StatusBar barStyle="light-content" backgroundColor="#052224" />
@@ -22,22 +28,12 @@ const Homepage = ({ navigation }) => {
             <View style={styles.textContainer}>
                 <Button
                     title="Login to Spotify"
-                    onPress={() => spotify.Authenticate()}
+                    onPress={spotify.Authenticate}
                     backgroundColor = '#a3e0dc'
                 />
-                {Authenticated(spotify, navigation)}
             </View>
         </View>
-    );
-}
-/**checks authentification and moves the next screen if true */
-function Authenticated (spotify, navigation) {
-    if (spotify.IsAuthenticated) {
-        return (
-        navigation.navigate('Your Playlists')
-        )
-    }
-    
+    )
 }
 
 const styles = StyleSheet.create({
@@ -72,7 +68,15 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flex: 1,
     },
-});
+})
 
-
-export default Homepage;
+export const HomepageOptions = { 
+    title: 'Tremeloo',
+    headerStyle: {
+        backgroundColor: '#052224',
+    },
+    headerTintColor: '#a3e0dc',
+    headerTitleStyle: {
+        fontSize: 14,
+    },
+}

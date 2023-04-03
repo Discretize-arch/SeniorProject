@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session';
 
-
 // platform essential (web)
 WebBrowser.maybeCompleteAuthSession()
 
@@ -19,11 +18,18 @@ const endpoint = {
   tokenEndpoint: 'https://accounts.spotify.com/api/token',
 }
 
+// define primary data types
+interface UserPlaylist {
+  playlist: SpotifyApi.PlaylistObjectSimplified
+  tracks: SpotifyApi.PlaylistTrackObject[]
+  recommendations: SpotifyApi.TrackObjectSimplified[]
+}
+
 /**
  * Setup react hooks and behaviors.
  * @returns An object of exported properties and functions for use in the front end.
  */
-export default function ConstructBackend() {
+export function ConstructBackend() {
 
   // hook: code
   const [code, setCode] = React.useState("")
@@ -43,7 +49,6 @@ export default function ConstructBackend() {
   React.useEffect(() => {
     if (response?.type === 'success') {
       setCode(response.params["code"])
-      console.log("success")
     }
   }, [response])
 
@@ -93,16 +98,8 @@ export default function ConstructBackend() {
 
   }, [code])
 
-  //
-  interface UserPlaylist {
-    playlist: SpotifyApi.PlaylistObjectSimplified
-    tracks: SpotifyApi.PlaylistTrackObject[]
-    recommendations: SpotifyApi.TrackObjectSimplified[]
-  }
-
   // key data
   const [Playlists, setPlaylists]: [UserPlaylist[], (playlist: UserPlaylist[]) => void] = React.useState([])
-  const [Selection, SetSelection]: [number, (index: number) => void] = React.useState(0)
   var AlreadyRecommended: string[] = []
 
   // initialize data on accessToken
@@ -145,7 +142,6 @@ export default function ConstructBackend() {
               })
               
               // print updated list in console
-              console.log(updatedList)
               setPlaylists(updatedList)
 
               // log error
@@ -158,13 +154,10 @@ export default function ConstructBackend() {
 
   }
 
-  function RefreshRecommendations() {
+  function RefreshRecommendations(playlistIndex: number) {
 
-    // invalid Selection
-    if (Selection < 0) return
-
-    // get playlist
-    let playlist = Playlists[Selection]
+    // locate playlist
+    let playlist = Playlists[playlistIndex]
 
     // get ids
     let identifiers = playlist.tracks.map((track, _, __) => track.track.id)
@@ -204,7 +197,7 @@ export default function ConstructBackend() {
         var updatedPlaylists = Playlists.map((value, index, array) => {
 
           // skip non-selected
-          if (index != Selection) return value
+          if (index != playlistIndex) return value
 
           // create replacement
           var replacement: UserPlaylist = {
@@ -227,14 +220,20 @@ export default function ConstructBackend() {
   return {
     /** Prompt the user to authenticate using their web browser. */
     Authenticate,
+    /** Reflects current authentication state of the user. */
     IsAuthenticated,
     /** An object representing the response from a request for the user's playlists. */
     Playlists,
     /** Refresh the recommendations for the selected playlist. */
-    RefreshRecommendations,
-    /** Currently selected user playlist index. */
-    Selection,
-    /** Set the target playlist index. */
-    SetSelection,
+    RefreshRecommendations
   }
 }
+
+const DefaultBackendState = {
+  Authenticate: () => {},
+  IsAuthenticated: false,
+  Playlists: <UserPlaylist[]>[],
+  RefreshRecommendations: (playlistIndex: String) => {}
+}
+
+export const Context = React.createContext(DefaultBackendState)

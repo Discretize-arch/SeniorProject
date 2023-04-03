@@ -1,9 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native';
-import Recommendation from '../recommendation.json';
-import ConstructBackend from '../Spotify';
-const SongRecs = ({ navigation }) => {
-    const {Playlists, RefreshRecommendations, Selection} = ConstructBackend();
+import React from 'react'
+import LogoHeader from '../LogoHeader'
+import { StyleSheet, Text, View, Image, Button, ScrollView } from 'react-native'
+import { Context } from "../Spotify"
+
+export const SongRecs = ({ navigation, route }) => {
+
+    const spotify = React.useContext(Context)
+
+    const songItemClick = (song) => {
+        console.log(`${song.name} was clicked`)
+    }
+
     return (
         <View style={styles.container}>
 
@@ -16,27 +23,20 @@ const SongRecs = ({ navigation }) => {
             </View>
 
             <View style={styles.songContainer}>
-                <ScrollView style={styles.scrollView}>
-                    {Recommendation.tracks.map((song, i) => (<View style={styles.songElements}>
-                        {/*issue with getting 1 of 3 given album covers*/}
-                        {/*<Image
-                            style={styles.albumCover}
-                            source={{uri: song.images.url}}
-                         />*/}
-
-                        <Text style={styles.songName}>
-                            {song.name}
-                        </Text>
+                <ScrollView style={styles.scrollView}>  
+                    {spotify.Playlists[route.params].recommendations.map((song, index) => (
+                    <View key={song.id} style={styles.songElements}>
+                        <Text style={styles.songName}>{song.artists[0].name} : {song.name}</Text>
 
                         <Button style={styles.songButton}
                             title='Add to Playlist'
-                            onPress={() => navigation.navigate('Song Recommendations')}
+                            onPress={() => songItemClick(song)}
                         />
                     </View>))}
                 </ScrollView>
             </View>
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -96,6 +96,16 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center',
         color: '#fff',
     }
-});
+})
 
-export default SongRecs;
+export const SongRecsOptions = { 
+    title: 'song recommendations',
+    headerStyle: {
+      backgroundColor: '#052224',
+    },
+    headerTintColor: '#a3e0dc',
+    headerTitleStyle: {
+      fontSize: 14,
+    },
+    headerTitle: (props) => <LogoHeader {...props} />
+}
