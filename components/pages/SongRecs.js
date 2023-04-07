@@ -7,8 +7,8 @@ export const SongRecs = ({ navigation, route }) => {
 
     const spotify = React.useContext(Context)
 
-    const songItemClick = (song) => {
-        console.log(`${song.name} was clicked`)
+    const songItemClick = (index, song) => {
+        spotify.AddTrack(index, song)
     }
 
     return (
@@ -30,7 +30,7 @@ export const SongRecs = ({ navigation, route }) => {
 
                         <Button style={styles.songButton}
                             title='Add to Playlist'
-                            onPress={() => songItemClick(song)}
+                            onPress={() => songItemClick(route.params, song)}
                         />
                     </View>))}
                 </ScrollView>

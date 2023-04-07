@@ -38,7 +38,7 @@ export function ConstructBackend() {
   const [request, response, promptAsync] = useAuthRequest(
     {
       clientId: 'ecee50ecceb74aefba8e87075a2324ae',
-      scopes: ['user-library-read', 'user-library-modify', 'playlist-read-private'],
+      scopes: ['user-library-read', 'user-library-modify', 'playlist-read-private', 'playlist-modify-public', 'playlist-modify-private'],
       usePKCE: false, // Authorization Code Flow: allow fetch token after authorizationEndpoint
       redirectUri: redirectURI,
     },
@@ -217,6 +217,48 @@ export function ConstructBackend() {
 
   }
 
+  function AddTrack(playlistIndex: number, track: SpotifyApi.TrackObjectSimplified) {
+
+    // locate playlist
+    let playlist = Playlists[playlistIndex]
+
+    // remove recommendation
+    var updatedRecs = <SpotifyApi.TrackObjectSimplified[]>[]
+
+    for (let rec of playlist.recommendations) {
+      // skip added track
+      if (rec.id == track.id) continue
+      // add any other
+      updatedRecs.push(rec)
+    }
+    
+    // set data using a modified copy of the array
+    var updatedPlaylists = Playlists.map((value, index, array) => {
+
+      // skip non-selected
+      if (index != playlistIndex) return value
+
+      // create replacement
+      var replacement: UserPlaylist = {
+        playlist: value.playlist,
+        tracks: value.tracks,
+        recommendations: updatedRecs
+      }
+
+      return replacement
+
+    })
+
+    // update
+    setPlaylists(updatedPlaylists)
+
+    // add it to playlist
+    wrapper.addTracksToPlaylist(playlist.playlist.id, [track.uri])
+
+    .then((_) => {})
+
+  }
+
   return {
     /** Prompt the user to authenticate using their web browser. */
     Authenticate,
@@ -225,7 +267,8 @@ export function ConstructBackend() {
     /** An object representing the response from a request for the user's playlists. */
     Playlists,
     /** Refresh the recommendations for the selected playlist. */
-    RefreshRecommendations
+    RefreshRecommendations,
+    AddTrack
   }
 }
 
@@ -233,7 +276,8 @@ const DefaultBackendState = {
   Authenticate: () => {},
   IsAuthenticated: false,
   Playlists: <UserPlaylist[]>[],
-  RefreshRecommendations: (playlistIndex: String) => {}
+  RefreshRecommendations: (playlistIndex: number) => {},
+  AddTrack: (playlistIndex: number, track: SpotifyApi.TrackObjectSimplified) => {}
 }
 
 export const Context = React.createContext(DefaultBackendState)
