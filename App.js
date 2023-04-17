@@ -1,73 +1,39 @@
-//import { StatusBar } from 'expo-status-bar';
-//import { StyleSheet, Text, View } from 'react-native';
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import Homepage from './components/Homepage.js';
-import YourPlaylists from './components/YourPlaylists.js';
-import SongRecs from './components/SongRecs.js';
-import LogoHeader from './components/LogoHeader.js';
+import { Homepage, HomepageOptions } from './components/pages/Homepage.js'
+import { YourPlaylists, YourPlaylistsOptions} from './components/pages/YourPlaylists.js'
+import { SongRecs, SongRecsOptions } from './components/pages/SongRecs.js'
 
-const Stack = createNativeStackNavigator();
+import { ConstructBackend, Context } from './components/Spotify'
 
 export default function App() {
+
+  const Backend = ConstructBackend()
+  const Stack = createNativeStackNavigator()
+
   return (
-    //container for navigating screens
-    <NavigationContainer>
-      {/*Stack containing each screen*/}
-      <Stack.Navigator initialRouteName='Home'>
+    <Context.Provider value={Backend}>
 
-        {/*homepage screen navigation*/}
-        <Stack.Screen
-          name="Home"
-          component={Homepage}
-          options={{ 
-            title: 'Tremeloo',
-            headerStyle: {
-              backgroundColor: '#052224',
-            },
-            headerTintColor: '#a3e0dc',
-            headerTitleStyle: {
-              fontSize: 14,
-            },
-          }}
-        />
+      {/*container for navigating screens*/}
+      <NavigationContainer>
 
-        {/*Your Playlists screen navigation*/}
-        <Stack.Screen
-          name="Your Playlists"
-          component={YourPlaylists}
-          options={{ 
-            title: 'playlists',
-            headerStyle: {
-              backgroundColor: '#052224',
-            },
-            headerTintColor: '#a3e0dc',
-            headerTitleStyle: {
-              fontSize: 14,
-            },
-            headerTitle: (props) => <LogoHeader {...props} />
-          }}
-        />
+        {/*Stack containing each screen*/}
+        <Stack.Navigator initialRouteName='Home'>
 
-        {/*Song Recommendations screen navigation*/}
-        <Stack.Screen
-          name="Song Recommendations"
-          component={SongRecs}
-          options={{ 
-            title: 'song recommendations',
-            headerStyle: {
-              backgroundColor: '#052224',
-            },
-            headerTintColor: '#a3e0dc',
-            headerTitleStyle: {
-              fontSize: 14,
-            },
-            headerTitle: (props) => <LogoHeader {...props} />
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+          {/*homepage screen navigation*/}
+          <Stack.Screen name="Home" component={Homepage} options={HomepageOptions}/>
+
+          {/*Your Playlists screen navigation*/}
+          <Stack.Screen name="Your Playlists" component={YourPlaylists} options={YourPlaylistsOptions}/>
+
+          {/*Song Recommendations screen navigation*/}
+          <Stack.Screen name="Song Recommendations" component={SongRecs} options={SongRecsOptions}/>
+
+        </Stack.Navigator>
+      </NavigationContainer>
+
+    </Context.Provider>
+  )
 }
