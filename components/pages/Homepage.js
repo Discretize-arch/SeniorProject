@@ -28,7 +28,7 @@ export const Homepage = ({ navigation }) => {
             <View style={styles.buttonContainer}>
                 <Pressable style={styles.button} 
                     onPress={spotify.Authenticate}>
-                    <Text style={styles.text}>login to spotify</Text>
+                    <Text style={styles.buttonText}>login to spotify</Text>
                 </Pressable>
             </View>
         </View>
@@ -73,11 +73,19 @@ const styles = StyleSheet.create({
     button: {
         width: 170,
         height: 50,
+        color: '#052224',
         borderWidth: 5,
         borderRadius: 50,
-        borderColor: '#a3e0dc',
+        borderColor: '#85C8C3',
+        backgroundColor: '#85C8C3',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+
+    buttonText: {
+        color: '#052224',
+        textAlign: 'center',
+        fontSize: 18,
     },
 
 })
