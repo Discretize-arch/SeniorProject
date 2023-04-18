@@ -55,13 +55,14 @@ const styles = StyleSheet.create({
 
     textContainer: {
         flex: 1 / 2,
+        width: 300,
         justifyContent: 'center',
     },
 
     text: {
         color: '#a3e0dc',
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 24,
     },
 
     buttonContainer: {
