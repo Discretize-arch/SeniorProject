@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, Button, StatusBar } from 'react-native'
+import { StyleSheet, Text, View, Image, Button, StatusBar, Pressable } from 'react-native'
 import { Context } from "../Spotify"
 
 /**home screen displayed before authentification */
@@ -25,12 +25,11 @@ export const Homepage = ({ navigation }) => {
                 <Text style={styles.text}>Connecting you to the music you want</Text>
             </View>
 
-            <View style={styles.textContainer}>
-                <Button
-                    title="Login to Spotify"
-                    onPress={spotify.Authenticate}
-                    backgroundColor = '#a3e0dc'
-                />
+            <View style={styles.buttonContainer}>
+                <Pressable style={styles.button} 
+                    onPress={spotify.Authenticate}>
+                    <Text style={styles.text}>login to spotify</Text>
+                </Pressable>
             </View>
         </View>
     )
@@ -62,15 +61,28 @@ const styles = StyleSheet.create({
     text: {
         color: '#a3e0dc',
         textAlign: 'center',
-        fontSize: 18, 
+        fontSize: 18,
     },
 
     buttonContainer: {
         flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
+
+    button: {
+        width: 170,
+        height: 50,
+        borderWidth: 5,
+        borderRadius: 50,
+        borderColor: '#a3e0dc',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
 })
 
-export const HomepageOptions = { 
+export const HomepageOptions = {
     title: 'Tremeloo',
     headerStyle: {
         backgroundColor: '#052224',
